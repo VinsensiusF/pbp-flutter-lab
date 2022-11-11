@@ -84,7 +84,7 @@ class _MyFormPageState extends State<MyFormPage> {
                             hintText: "Contoh: Makan Masjep",
                             labelText: "Judul",
                             // Menambahkan icon agar lebih intuitif
-                            icon: const Icon(Icons.people),
+                            icon: const Icon(Icons.title),
                             // Menambahkan circular border agar lebih rapi
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(5.0),
@@ -120,7 +120,7 @@ class _MyFormPageState extends State<MyFormPage> {
                             hintText: "Contoh: 10000",
                             labelText: "Nominal",
                             // Menambahkan icon agar lebih intuitif
-                            icon: const Icon(Icons.people),
+                            icon: const Icon(Icons.attach_money),
                             // Menambahkan circular border agar lebih rapi
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(5.0),
@@ -149,7 +149,7 @@ class _MyFormPageState extends State<MyFormPage> {
                       ),
 
                       ListTile(
-                      leading: const Icon(Icons.class_),
+                      leading: const Icon(Icons.type_specimen),
                       title: const Text(
                           'Pilih Jenis',
                       ),
@@ -193,7 +193,7 @@ class _MyFormPageState extends State<MyFormPage> {
                                       padding: const EdgeInsets.only(top: 20, bottom: 20),
                                       shrinkWrap: true,
                                       children: <Widget>[
-                                        const Center(child: Text('Informasi Data')),
+                                        const Center(child: Text('Data Berikut Tersimpan Di Aplikasi')),
                                         const SizedBox(height: 20),
                                       
                                         Text(
