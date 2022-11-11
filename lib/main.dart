@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:counter_7/list.dart';
+import 'package:counter_7/form.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,15 +16,15 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Counter_7'),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({super.key});
 
-  final String title;
+  final String title = "Counter_7";
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -62,6 +64,36 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
+      drawer: Drawer(
+              child: Column(
+                children: [
+                  ListTile(
+                    title: const Text("Counter_7"),
+                    onTap: () {
+                      Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) => const MyHomePage()),
+                      );
+                    },
+                  ),
+                  ListTile(
+                    title: const Text("Tambah Budget"),
+                    onTap: () {
+                      Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) => const MyFormPage()),
+                      );
+                    },
+                  ),
+                  ListTile(
+                    title: const Text("Daftar Budget"),
+                    onTap: () {
+                      Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) => const MyListPage()),
+                      );
+                    },
+                  ),
+                ],
+              ),
+            ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
