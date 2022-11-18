@@ -1,5 +1,6 @@
 import 'package:counter_7/main.dart';
-import 'package:counter_7/form.dart' as form;
+import 'package:counter_7/page/form.dart' as form;
+import 'package:counter_7/page/mywatchlist_page.dart';
 import 'package:flutter/material.dart';
 var itemTransaksi = form.list;
 
@@ -43,6 +44,16 @@ class _MyListPageState extends State<MyListPage> {
                       Navigator.pushReplacement(context,
                       MaterialPageRoute(builder: (context) => const form.MyFormPage()),
                       );
+                    },
+                  ),
+                  ListTile(
+                    title: const Text('My Watchlist'),
+                    onTap: () {
+                        // Route menu ke halaman to do
+                        Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => const MywatchlistPage()),
+                        );
                     },
                   ),
                 ],
