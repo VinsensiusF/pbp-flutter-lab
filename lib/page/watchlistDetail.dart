@@ -56,10 +56,11 @@ class WatchlistDetail extends StatelessWidget {
                 ],
               ),
             ),
-            body: Center(child: Container(
-              height: 800.0,
+            body: Center(child: Column(children: <Widget>[
+              Container(
+              height: 500.0,
               width: 800.0,
-              color: Colors.blue[50],
+              color: Colors.white,
               child: RichText(
                 text: TextSpan(
                           style: const TextStyle(
@@ -77,21 +78,35 @@ class WatchlistDetail extends StatelessWidget {
                             const TextSpan(text: "                                Review: \n"+"                                ", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
                             TextSpan(text: watchlist.fields.review, style:const TextStyle(fontSize: 20)),
                           ]
+                          
                         ),
-                        ),   
-            ),)
-          //   body: Column(
-          //     children: [
-          //       const SizedBox(
-          //         height: 10,
-          //       ),
-          //       Text(watchlist.fields.title, style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20)),
-          //       Text("Release Date: ${watchlist.fields.releaseDate}", style: const TextStyle(fontSize: 20)),
-          //       Text("Rating: ${watchlist.fields.rating}", style: const TextStyle(fontSize: 20)),
-          //       Text("Status: ${watchlist.fields.watched}", style: const TextStyle(fontSize: 20)),
-          //       Text("Review: \n${watchlist.fields.review}", style: const TextStyle(fontSize: 20)),
-          //     ],
-          // ),
+                      ),
+                  ),
+                  SizedBox(
+                      height: 40,
+                      width: 780,
+                      child: TextButton(
+                          onPressed: () {
+                              Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => const MywatchlistPage()),
+                              );
+                          },
+                          style: TextButton.styleFrom(
+                              primary: Colors.white,
+                              backgroundColor: Colors.blue,
+                          ),
+                          child: const Text('Back', style: TextStyle(fontSize: 15),),
+                      ),  
+                  ),
+              
+              ],
+            )
+            
+
+            
+            )
+        
     );
   }
 }
